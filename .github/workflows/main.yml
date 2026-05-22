@@ -9,5 +9,6 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello GitHub Actions add CI workflow!"
+
+        - name: Say Hello Step 2
         run: echo "Step 1"
-      run: npm wrong-command
