@@ -9,3 +9,4 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello GitHub Actions add CI workflow!"
+        run: echo "Step 1"
