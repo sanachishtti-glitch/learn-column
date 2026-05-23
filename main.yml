@@ -14,4 +14,4 @@ jobs:
       - name: Load Secret
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: echo "Secret loaded successfully"
+        run: echo "Secret loaded suuuccessfully"
