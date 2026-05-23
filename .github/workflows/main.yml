@@ -11,4 +11,4 @@ jobs:
       - name: Generate Response
         run: |
           echo "🤖 AI Bot Response:"
-          echo "GitHub Actions is a toollllllllll that automates workflows like testing, building, and deploying code."
+          echo "GitHub Actions is a toool that automates workflows like testing, building, and deploying code."
