@@ -1,4 +1,4 @@
-name: AI Chat Bot
+name: Free AI Chat Bot
 
 on:
   workflow_dispatch:
@@ -8,16 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Ask OpenAI
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - name: Generate Response
         run: |
-          curl https://api.openai.com/v1/chat/completions \
-          -H "Authorization: Bearer $OPENAI_API_KEY" \
-          -H "Content-Type: application/json" \
-          -d '{
-            "model": "gpt-4o-mini",
-            "messages": [{"role":"user","content":"Hello AI, explain GitHub Actions"}]
-          }'
+          echo "🤖 AI Bot Response:"
+          echo "GitHub Actions is a tool that automates workflows like testing, building, and deploying code."
