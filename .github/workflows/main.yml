@@ -1,18 +1,23 @@
-name: OpenAI API Test
+name: AI Chat Bot
 
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
-  test:
+  chat:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Call OpenAI API
+      - name: Ask OpenAI
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          curl https://api.openai.com/v1/models \
-          -H "Authorization: Bearer $OPENAI_API_KEY"
+          curl https://api.openai.com/v1/chat/completions \
+          -H "Authorization: Bearer $OPENAI_API_KEY" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "model": "gpt-4o-mini",
+            "messages": [{"role":"user","content":"Hello AI, explain GitHub Actions"}]
+          }'
