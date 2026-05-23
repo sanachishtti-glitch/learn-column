@@ -1,4 +1,4 @@
-name: Test Secret
+name: OpenAI API Test
 
 on:
   push:
@@ -8,10 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Load Secret
+      - name: Call OpenAI API
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: echo "Secret loaded suuuccessfully"
+        run: |
+          curl https://api.openai.com/v1/models \
+          -H "Authorization: Bearer $OPENAI_API_KEY"
